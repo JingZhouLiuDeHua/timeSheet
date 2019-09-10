@@ -67,7 +67,7 @@
         <div class="header">TIMECARD<br>Data Entry System</div>
         <div class="header">THE MIDDLE IMAGE</div>
         <div class="header">
-            Welcome {% if user.is_authenticated %}, {{ user.First_name }}.{% endif %}<br>
+            Welcome {{user}}<br>
             {{ current date }}<br>
             <a href="">Log Out</a>
         </div><br>
@@ -88,8 +88,19 @@
         <h2> {% block title %} Page Name {% endblock %}</h2>
 
         <table>
-            {% block content %}
-            {% endblock %}
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Delete?</th>
+            </tr>
+            {% for user in users %}
+            <tr>
+                <td>{{user.First_name}} {{user.Last_name}}</td>
+                <td>{{user.Authority}}</td>
+                <td>Y/N</td>
+
+            </tr>
+            {% endfor %}
         </table>
     </div>
 </body>
