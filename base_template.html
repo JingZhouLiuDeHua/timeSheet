@@ -71,21 +71,25 @@
             {{ current date }}<br>
             <a href="">Log Out</a>
         </div><br>
+        {% block topnav %}
         <a href="" class="topnav">Administration</a>
         <a href="/" class="topnav">Time Card Management</a>
         <a href="/" class="topnav">Reports</a>
+        {% endblock %}
     </div>
     <div class="sidebar">
+        {% block sidenav %}
         <a href="/" class="sidenav">Users</a>
         <a href="/" class="sidenav">Master Data</a>
         <a href="/" class="sidenav">Policy Manager </a>
-
+        {% endblock %}
     </div>
     <div class="main">
-        <h2> {{Page Name }} </h2>
-        {{for i in doctor}}
-        <table>
+        <h2> {% block title %} Page Name {% endblock %}</h2>
 
+        <table>
+            {% block content %}
+            {% endblock %}
         </table>
     </div>
 </body>
