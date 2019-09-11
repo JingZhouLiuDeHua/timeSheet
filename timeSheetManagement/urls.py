@@ -18,9 +18,13 @@ from django.urls import path
 from django.conf.urls import url
 from AddDoctor import views
 
+
 urlpatterns = [
     #path('admin/', admin.site.urls),
     url(r'^admin/', admin.site.urls),
-    url(r'^doctor_list/', views.doctor_list),
-    url(r'^add_doctor/', views.add_doctor),
+    url(r'^doctor_list/', views.showthis),
+    url(r'^add_doctor/',  views.add_doctor),
+    #url(r'^doctors_from_db$',views.doctors_from_db,name='doctors_from_db'),
+    #url(r'^doctor_list/',views.doctors_from_db),
+    #url(r'^add_user/', views.add_user),
 ]

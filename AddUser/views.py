@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from AddDoctor import models
+from AddUser import models
 
 # Create your views here.
 def user_list(request):
