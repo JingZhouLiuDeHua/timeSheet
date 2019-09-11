@@ -60,12 +60,12 @@
     </style>
 </head>
 <body>
+
     <div class="topbar">
         <div class="header">TIMECARD<br>Data Entry System</div>
         <div class="header">THE MIDDLE IMAGE</div>
         <div class="header">
             Welcome {% if user.is_authenticated %}, {{ user.First_name }}.{% endif %}<br>
-            {{ current date }}<br>
             <a href="">Log Out</a>
         </div><br>
         {% block topnav %}

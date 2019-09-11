@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Locations</title>
+</head>
+<body>
+<table border="1" style="width:800px">
+      <tr>
+        <td>  {% for s in all_objects %} </td>
+        <td>   {{ s.Location }} </td>
+      </tr>
+      <tr>
+        <td>   {{ s.Sector}} </td>
+        {% endfor %}
+      </tr>
+    </table>
+
+</body>
+</html>
