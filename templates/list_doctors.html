@@ -1,0 +1,30 @@
+{% extends "base_template.html" %}
+
+{% block topnav %}
+    <a href="" class="topnav">Administration</a>
+    <a href="/" class="topnav">Time Card Management</a>
+    <a href="/" class="topnav">Reports</a>
+{% endblock %}
+
+{% block sidenav %}
+    <a href="/" class="sidenav">Users</a>
+    <a href="/" class="sidenav">Master Data</a>
+    <a href="/" class="sidenav">Policy Manager </a>
+{% endblock %}
+
+{%block content%}
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Delete?</th>
+    </tr>
+    {% for doc in all_objects %}
+    <tr>
+        <td>{{doc.First_name}}</td>
+        <td>{{doc.Last_name}}</td>
+        <td>Y/N</td>
+    </tr>
+    {% endfor %}
+    </table>
+{% endblock %}

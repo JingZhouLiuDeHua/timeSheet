@@ -14,6 +14,10 @@ def doctor_list(request):
     doctor=models.Doctor.objects.all()
     return render(request,'doctor_list.html',{'doctor_list':doctor})
 
+def try_this(request):
+    all_objects = Doctor.objects.all()
+    context = {'all_objects': all_objects}
+    return render(request, 'list_doctors.html', context)
 
 def showthis(request):
     all_objects = Doctor.objects.all()
