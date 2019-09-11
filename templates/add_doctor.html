@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/static/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="page-header ">
+            <h1 class="text-center">add doctor</h1>
+            <div class="col-md-6 col-md-offset-3">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">add</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form class="form-horizontal" action="/add_doctor/" method="post">
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-3 control-label">doctor information</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="First_name" name="First_name"
+                                           placeholder="First_name">
+                                    <input type="text" class="form-control" id="Last_name" name="Last_name"
+                                           placeholder="Last_name">
+                                    <input type="text" class="form-control" id="FileNumber" name="FileNumber"
+                                           placeholder="FileNumber">
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <div class="col-sm-offset-3 col-sm-9">
+                                    <button type="submit" class="btn btn-default">Save</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
