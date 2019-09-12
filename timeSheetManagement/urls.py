@@ -20,14 +20,15 @@ from AddDoctor import views
 from AddLocation import views
 from AddUser import views
 from django.views.generic.base import TemplateView
+from LoginLogout import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^doctor_list/', views.showthis),
-    url(r'^add_doctor/',  views.add_doctor),
-    url(r'^try_me/',  views.try_this),
-    url(r'^add_user/', views.add_user),
-    url(r'^user_list/', views.user_list),
-    path('accounts/', include('django.contrib.auth.urls')),
-    path('', TemplateView.as_view(template_name='base_template.html'), name='base'),
+    #url(r'^doctor_list/', views.showthis),
+    #url(r'^add_doctor/',  views.add_doctor),
+    #url(r'^try_me/',  views.try_this),
+    #url(r'^add_user/', views.add_user),
+    #url(r'^user_list/', views.user_list),
+    path('', views.login_request, name="login"),
+    path('logout/', views.logout_request, name="logout"),
 ]
