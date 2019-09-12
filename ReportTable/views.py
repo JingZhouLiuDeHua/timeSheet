@@ -1,7 +1,3 @@
-from django.shortcuts import render, redirect
-from .models import Report
-
-# Create your views here.
 
 from django.shortcuts import render,redirect
 
@@ -38,4 +34,4 @@ def add_report(request):
 def showReport(request):
     all_objects = Report.objects.all()
     context = {'all_objects': all_objects}
-    return render(request, 'TimeCard.html', context)
+    return render(request, 'report_list.html', context)
