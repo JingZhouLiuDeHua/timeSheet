@@ -19,6 +19,7 @@ from django.conf.urls import url
 from AddDoctor.views import show_doctors, add_doctor
 from AddLocation.views import add_location, showLocation
 from AddUser.views import add_user, user_list
+from ReportTable.views import showReport
 from django.views.generic.base import TemplateView
 
 urlpatterns = [
@@ -30,6 +31,6 @@ urlpatterns = [
     url(r'^location_list/', showLocation, name='show_location_list'),
     url(r'^add_location/', add_location, name='add_location_form'),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('timecard/', TemplateView.as_view(template_name='TimeCard.html'), name='show_time_card'),
+    path('timecard/', showReport, name='show_time_card'),
     path('', TemplateView.as_view(template_name='base_template.html'), name='base'),
 ]
