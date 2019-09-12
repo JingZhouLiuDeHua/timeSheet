@@ -1,13 +1,39 @@
-<!doctype html>
-<html>
-  <body>
+{% extends "base_template.html" %}
 
-    <table border="1" style="width:800px">
-      <ol>
-        {% for s in all_objects %}
-        <li> Doctor_name: {{ s.Doctor_name }} Time_In: {{ s.Time_In }} Time_Out: {{ s.Time_Out }} Location: {{ s.Location }}  Sector: {{ s.Sector }} Hours_Code: {{ s.Hours_Code }} Hours_Worked: {{ s.Hours_Worked }}  </li>
-        {% endfor %}
-      </ol>
-    </table>
-  </body>
-</html>
+{% block title %} Add Time Card {% endblock %} <!-- Creates page title  --!>
+{% block topnav %}
+    <a href="{% url 'show_user_list' %}" class="topnav">Administration</a>
+    <a href="{% url 'show_time_card' %}" class="topnav active">Time Card Management</a>
+    <a href="{% url 'show_time_card' %}" class="topnav">Reports</a>
+{% endblock %}
+{% block sidenav %}
+    <a href="/" class="sidenav active">View Time Card</a>
+    <a href="{% url 'add_report' %}" class="sidenav">Add Time Card</a>
+{% endblock %}
+{% block name %}
+    View Time Card
+{% endblock %}
+{%block content%}
+<table>
+  <tr>
+        <th>Doctor name</th>
+        <th>Time In</th>
+        <th>Time Out</th>
+        <th>Location</th>
+        <th>Sector</th>
+        <th>Hours Code</th>
+        <th>Hours Worked</th>
+  </tr>
+  {% for s in all_objects %}
+  <tr>
+        <td>{{ s.Doctor_name }} </td>
+        <td>{{ s.Time_In }} </td>
+        <td>{{ s.Time_Out }} </td>
+        <td>{{ s.Location }} </td>
+        <td>{{ s.Sector }} </td>
+        <td>{{ s.Hours_Code }} </td>
+        <td>{{ s.Hours_Worked }}</td>
+  </tr>
+    {% endfor %}
+</table>
+{% endblock %}

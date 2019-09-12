@@ -26,7 +26,7 @@ def add_report(request):
         Company_Code = request.POST.get('Company_Code')
         report = models.Report.objects.create(Doctor_name=Doctor_name, FileNumber=FileNumber, Location=Location,Sector=Sector,Work_Date=Work_Date,Time_In=Time_In,Time_Out=Time_Out,Hours_Worked=Hours_Worked,Hours_Code=Hours_Code,Report_Date=Report_Date,Batch_ID=Batch_ID,Company_Code=Company_Code)
         report.save()
-        return redirect('/report_list/')
+        return redirect('/timecard/')
     #print("request.method==POST not called")
     return render(request,'add_report.html')
 
