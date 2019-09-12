@@ -3,9 +3,9 @@ from AddUser import models
 
 # Create your views here.
 def user_list(request):
-    all_objects = User.objects.all()
+    all_objects = models.User.objects.all()
     context = {'all_objects': all_objects}
-    return render(request, 'user.html', context)
+    return render(request, 'user_list.html', context)
 
 
 

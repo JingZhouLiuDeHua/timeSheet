@@ -102,16 +102,16 @@
         </div>
         <div id="startedfromthe">
             {% block topnav %}
-            <a href="" class="topnav">Administration</a>
-            <a href="/" class="topnav">Time Card Management</a>
-            <a href="/" class="topnav">Reports</a>
+            <a href="{% url 'show_user_list' %}" class="topnav">Administration</a>
+            <a href="{% url 'show_time_card' %}" class="topnav">Time Card Management</a>
+            <a href="{% url 'show_time_card' %}" class="topnav">Reports</a>
             {% endblock %}
         </div>
     </div>
     <div id="sidebar"><br>
         {% block sidenav %}
-        <a href="/" class="sidenav">Users</a>
-        <a href="/" class="sidenav">Master Data</a>
+        <a href="{% url 'show_user_list' %}" class="sidenav">Users</a>
+        <a href="{% url 'show_doctor_list' %}" class="sidenav">Master Data</a>
         <a href="/" class="sidenav">Policy Manager </a>
         {% endblock %}
     </div>

@@ -30,5 +30,6 @@ urlpatterns = [
     url(r'^location_list/', showLocation, name='show_location_list'),
     url(r'^add_location/', add_location, name='add_location_form'),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('timecard/', TemplateView.as_view(template_name='TimeCard.html'), name='show_time_card'),
     path('', TemplateView.as_view(template_name='base_template.html'), name='base'),
 ]
