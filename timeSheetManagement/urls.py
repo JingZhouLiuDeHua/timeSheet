@@ -27,6 +27,7 @@ urlpatterns = [
     url(r'^doctor_list/', show_doctors, name='show_doctor_list'),
     url(r'^add_doctor/',  add_doctor, name='add_doctor_form'),
     url(r'^register/', add_user, name='add_user_form'),
+    url(r'^add_user/', add_user, name='add_user_form'),
     url(r'^user_list/', user_list, name='show_user_list'),
     url(r'^location_list/', showLocation, name='show_location_list'),
     url(r'^add_location/', add_location, name='add_location_form'),
