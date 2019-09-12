@@ -6,7 +6,7 @@ from AddDoctor import models
 
 
 def searchDoctor(request):
-    template_name = 'doctor_list.html'
+    template_name = 'list_doctors.html'
     query = request.GET.get('First_name', 'Last_name', 'FileNumber')
 
     if query:

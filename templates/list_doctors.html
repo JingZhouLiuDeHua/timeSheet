@@ -1,15 +1,29 @@
 {% extends "base_template.html" %}
 
+{% block title %} Master Data {% endblock %} <!-- Creates page title  --!>
+
 {% block topnav %}
-    <a href="" class="topnav">Administration</a>
+    <a href="" class="topnav active">Administration</a>
     <a href="/" class="topnav">Time Card Management</a>
     <a href="/" class="topnav">Reports</a>
 {% endblock %}
 
 {% block sidenav %}
     <a href="/" class="sidenav">Users</a>
-    <a href="/" class="sidenav">Master Data</a>
+    <a href="/" class="sidenav active">Master Data</a>
     <a href="/" class="sidenav">Policy Manager </a>
+{% endblock %}
+
+{% block name %}
+    Master Data
+{% endblock %}
+
+{% block findadd %}
+<input type="text" id="first">
+<input type="text" id="last">
+<input type="number" id="file">
+<input type="submit" value="send" method="GET">
+<a href="{% url 'add_doctor_form' %}">Add a doctor</a>
 {% endblock %}
 
 {%block content%}
@@ -17,12 +31,14 @@
     <tr>
         <th>Name</th>
         <th>Description</th>
+        <th>File Number</th>
         <th>Delete?</th>
     </tr>
     {% for doc in all_objects %}
     <tr>
         <td>{{doc.First_name}}</td>
         <td>{{doc.Last_name}}</td>
+        <td>{{doc.FileNumber}}</td>
         <td>Y/N</td>
     </tr>
     {% endfor %}
