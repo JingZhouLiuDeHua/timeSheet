@@ -20,11 +20,12 @@
 {% endblock %}
 
 {% block findadd %}
-<input type="text" id="first">
-<input type="text" id="last">
-<input type="number" id="file">
-<input type="submit" value="send" method="GET">
-<a href="{% url 'add_location_form' %}">Add a location</a>
+<form method="get">
+    <input name = 'query1' type="text" id="location">
+    <input name = 'query2' type="text" id="sector">
+    <input type="submit" value="send" method="GET">
+    <a href="{% url 'add_location_form' %}">Add a location</a>
+</form>
 {% endblock %}
 
 {%block content%}

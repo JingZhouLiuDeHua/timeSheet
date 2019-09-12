@@ -6,11 +6,15 @@ from AddLocation import models
 
 
 def searchLocation(request):
-    template_name = 'base_template.html'
-    query = request.GET.get('Location', 'Sector')
+    query1 = request.GET.get('Location')
+    query2 = request.Get.get('Sector')
+    if method == 'POST':
+        if query1:
+            results = Location.objects.filter(name_icontains=query1).distinct()
+        elif query2:
+            results = Location.objects.filter(name_icontains=query2).distinct()
+        else:
+            results = []
 
-    if query:
-        results = Location.objects.filter(name_icontains=query).distinct()
-    else:
-        results = []
-    return render(request, template_name, {'results': results})
+    return render(request, {'results': results}, template_name= 'location_list.html')
+
