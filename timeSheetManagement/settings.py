@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'AddDoctor',
     'AddUser',
     'AddLocation',
+    'ReportTable',
 ]
 
 MIDDLEWARE = [

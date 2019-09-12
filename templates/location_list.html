@@ -1,20 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Locations</title>
-</head>
-<body>
-<table border="1" style="width:800px">
-      <tr>
-        <td>  {% for s in all_objects %} </td>
-        <td>   {{ s.Location }} </td>
-      </tr>
-      <tr>
-        <td>   {{ s.Sector}} </td>
-        {% endfor %}
-      </tr>
-    </table>
+{% extends "base_template.html" %}
 
-</body>
-</html>
+{% block title %} Master Data {% endblock %} <!-- Creates page title  --!>
+
+{% block topnav %}
+    <a href="{% url 'show_user_list' %}" class="topnav active">Administration</a>
+    <a href="{% url 'show_time_card' %}" class="topnav">Time Card Management</a>
+    <a href="{% url 'show_time_card' %}" class="topnav">Reports</a>
+{% endblock %}
+
+{% block sidenav %}
+    <a href="{% url 'show_user_list' %}" class="sidenav">Users</a>
+    <a href="{% url 'show_doctor_list' %}" class="sidenav">Doctors</a>
+    <a href="/" class="sidenav active">Locations</a>
+    <a href="/" class="sidenav">Policy Manager </a>
+{% endblock %}
+
+{% block name %}
+    Master Data - Location
+{% endblock %}
+
+{% block findadd %}
+<input type="text" id="first">
+<input type="text" id="last">
+<input type="number" id="file">
+<input type="submit" value="send" method="GET">
+<a href="{% url 'add_location_form' %}">Add a location</a>
+{% endblock %}
+
+{%block content%}
+<table>
+    <tr>
+        <th>Location</th>
+        <th>Sector</th>
+        <th>Delete?</th>
+    </tr>
+    {% for s in all_objects %}
+    <tr>
+        <td>   {{ s.Location }} </td>
+        <td>   {{ s.Sector}} </td>
+    </tr>
+    {% endfor %}
+    </table>
+{% endblock %}

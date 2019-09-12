@@ -4,14 +4,15 @@
 {% block title %} Add Doctor {% endblock %} <!-- Creates page title  --!>
 
 {% block topnav %}
-    <a href="" class="topnav active">Administration</a>
-    <a href="/" class="topnav">Time Card Management</a>
-    <a href="/" class="topnav">Reports</a>
+    <a href="{% url 'show_user_list' %}" class="topnav active">Administration</a>
+    <a href="{% url 'show_time_card' %}" class="topnav">Time Card Management</a>
+    <a href="{% url 'show_time_card' %}" class="topnav">Reports</a>
 {% endblock %}
 
 {% block sidenav %}
-    <a href="/" class="sidenav">Users</a>
-    <a href="/" class="sidenav active">Master Data</a>
+    <a href="{% url 'show_user_list' %}" class="sidenav">Users</a>
+    <a href="/" class="sidenav active">Doctors</a>
+    <a href="{% url 'show_location_list' %}" class="sidenav">Locations</a>
     <a href="/" class="sidenav">Policy Manager </a>
 {% endblock %}
 

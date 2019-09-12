@@ -1,16 +1,16 @@
 {% extends 'base_template.html' %}
 
-{% block name %}Time Card {% end block %}
+{% block name %}Time Card {% endblock %}
 
 {% block topnav %}
-        <a href="" class="topnav">Administration</a>
-        <a href="/" class="topnav">Time Card Management</a>
-        <a href="/" class="topnav">Reports</a>
+        <a href="{% url 'show_user_list' %}" class="topnav active">Administration</a>
+        <a href="{% url 'show_time_card' %}" class="topnav">Time Card Management</a>
+        <a href="{% url 'show_time_card' %}" class="topnav">Reports</a>
 {% endblock %}
 
 
 {% block sidenav %}
-        <a href="/" class="sidenav">View Time Card </a>
+        <a href="/" class="sidenav active">View Time Card </a>
         <a href="/" class="sidenav">New Time Card</a>
 {% endblock %}
 
@@ -20,6 +20,7 @@
 <p>Find Doctor: </p> <input type="text" name="docname"> SEARCH BOX HERE </input>
 <input type="radio" name="calendar" checked>Calendar View</input>
 <input type="radio" name="grid">Grid View</input>
+
 <table>
 
 </table>

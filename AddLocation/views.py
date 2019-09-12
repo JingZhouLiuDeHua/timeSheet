@@ -1,12 +1,12 @@
 from django.shortcuts import render, redirect
-from . import models
+from .models import Location
 
 
 def add_location(request):
     if request.method == 'POST':
-        Location = request.POST.get('Location')
-        Sector = request.POST.get('Sector')
-        loc = models.Location.objects.create(Location=Location,Sector=Sector)
+        locate = request.POST.get('Location')
+        sec = request.POST.get('Sector')
+        loc = Location.objects.create(Location=locate,Sector=sec)
         #doc = models.Doctor.objects.create(First_name="a", Last_name="y", FileNumber=1)
         #user = models.User.objects.create(First_name="tao", Last_name="yan", Description="doctor",LoginIDOrEmail="doctor@gmail.com",Authority=0,Password="abc",RetypePassword="abc")
         loc.save()
@@ -17,7 +17,7 @@ def add_location(request):
 def showLocation(request):
     all_objects = Location.objects.all()
     context = {'all_objects': all_objects}
-    return render(request, 'location_.html', context)
+    return render(request, 'location_list.html', context)
 
 # Create your views here.
 

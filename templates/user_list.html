@@ -1,0 +1,43 @@
+{% extends "base_template.html" %}
+
+{% block title %} Users {% endblock %} <!-- Creates page title  --!>
+
+{% block topnav %}
+    <a href="{% url 'show_user_list' %}" class="topnav active">Administration</a>
+    <a href="{% url 'show_time_card' %}" class="topnav">Time Card Management</a>
+    <a href="{% url 'show_time_card' %}" class="topnav">Reports</a>
+{% endblock %}
+
+{% block sidenav %}
+    <a href="{% url 'show_user_list' %}" class="sidenav active">Users</a>
+    <a href="{% url 'show_doctor_list' %}" class="sidenav">Master Data</a>
+    <a href="/" class="sidenav">Policy Manager </a>
+{% endblock %}
+
+{% block name %}
+    Users
+{% endblock %}
+
+{% block findadd %}
+
+<a href="{% url 'add_user_form' %}">Add user</a>
+{% endblock %}
+
+{%block content%}
+<table>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Description</th>
+        <th>Delete?</th>
+   </tr>
+  {% for s in all_objects %}
+  <tr>
+      <td>   {{ s.First_name }} </td>
+      <td>   {{ s.Last_name}} </td>
+      <td>   {{s.Description}} </td>
+      <td>   Y/N </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}
