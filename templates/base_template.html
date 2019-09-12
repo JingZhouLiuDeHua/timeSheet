@@ -65,6 +65,7 @@
         a:link, a:active, a:visited, a:hover {
             text-decoration:none;
             font-family: tahoma;
+            color: white;
         }
         .active {
             background-color: white;
@@ -98,7 +99,7 @@
         <div id="heading">
             <div class="headerblock"><br>TIMECARD <br> Data Entry System</div>
             <div class="headerblock"><br>Choctaw Archiving</div>
-            <div class="headerblock"><br>Welcome user.name<br> date</div>
+            <div class="headerblock"><br>Welcome<br> <a href="{% url 'logout' %}">Log out</a></div>
         </div>
         <div id="startedfromthe">
             {% block topnav %}
