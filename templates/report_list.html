@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+  <body>
+
+    <table border="1" style="width:800px">
+      <ol>
+        {% for s in all_objects %}
+        <li> Doctor_name: {{ s.Doctor_name }} Time_In: {{ s.Time_In }} Time_Out: {{ s.Time_Out }} Location: {{ s.Location }}  Sector: {{ s.Sector }} Hours_Code: {{ s.Hours_Code }} Hours_Worked: {{ s.Hours_Worked }}  </li>
+        {% endfor %}
+      </ol>
+    </table>
+  </body>
+</html>

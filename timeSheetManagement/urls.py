@@ -17,14 +17,22 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
 from AddDoctor import views
-
+from AddLocation import views
+from AddUser import views
+from ReportTable import views
 
 urlpatterns = [
-    #path('admin/', admin.site.urls),
+    # path('admin/', admin.site.urls),
     url(r'^admin/', admin.site.urls),
-    url(r'^doctor_list/', views.showthis),
-    url(r'^add_doctor/',  views.add_doctor),
-    #url(r'^doctors_from_db$',views.doctors_from_db,name='doctors_from_db'),
-    #url(r'^doctor_list/',views.doctors_from_db),
+    # url(r'^doctor_list/', views.showthis),
+    # url(r'^add_doctor/',  views.add_doctor),
+    # url(r'^doctors_from_db$',views.doctors_from_db,name='doctors_from_db'),
+    # url(r'^doctor_list/',views.doctors_from_db),
+    # url(r'^add_user/', views.add_user),
+    # url(r'^location_list/', views.showLocation),
+    # url(r'^add_location/', views.add_location),
     #url(r'^add_user/', views.add_user),
+    #url(r'^user_list/', views.user_list),
+    url(r'^add_report/', views.add_report),
+    url(r'^report_list/', views.showthis),
 ]

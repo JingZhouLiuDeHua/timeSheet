@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+  <body>
+
+    <table border="1" style="width:800px">
+      <ol>
+        {% for s in all_objects %}
+        <li> First_name: {{ s.First_name }} Last_name: {{ s.Last_name }} FileNumber: {{ s.FileNumber }}</li>
+        {% endfor %}
+      </ol>
+    </table>
+  </body>
+</html>

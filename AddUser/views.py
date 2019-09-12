@@ -1,10 +1,12 @@
 from django.shortcuts import render,redirect
 from AddUser import models
+from .models import User
 
 # Create your views here.
 def user_list(request):
-    user=models.User.objects.all()
-    return render(request,'user_list.html',{'user_list':user})
+    all_objects = User.objects.all()
+    context = {'all_objects': all_objects}
+    return render(request, 'user.html', context)
 
 
 

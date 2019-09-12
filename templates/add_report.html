@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/static/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="page-header ">
+            <h1 class="text-center">add report</h1>
+            <div class="col-md-6 col-md-offset-3">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">add</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form class="form-horizontal" action="/add_report/" method="post">
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-3 control-label">location</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="Doctor_name" name="Doctor_name"
+                                           placeholder="Doctor_name">
+                                    <input type="text" class="form-control" id="FileNumber" name="FileNumber"
+                                           placeholder="FileNumber">
+                                     <input type="text" class="form-control" id="Location" name="Location"
+                                           placeholder="Location">
+                                     <input type="text" class="form-control" id="Sector" name="Sector"
+                                           placeholder="Sector">
+                                     <input type="text" class="form-control" id="Work_Date" name="Work_Date"
+                                           placeholder="Work_Date">
+                                     <input type="text" class="form-control" id="Time_In" name="Time_In"
+                                           placeholder="Time_In">
+                                     <input type="text" class="form-control" id="Time_Out" name="Time_Out"
+                                           placeholder="Time_Out">
+                                     <input type="text" class="form-control" id="Hours_Worked" name="Hours_Worked"
+                                           placeholder="Hours_Worked">
+                                     <input type="text" class="form-control" id="Hours_Code" name="Hours_Code"
+                                           placeholder="Hours_Code">
+                                     <input type="text" class="form-control" id="Report_Date" name="Report_Date"
+                                           placeholder="Report_Date">
+                                     <input type="text" class="form-control" id="Batch_ID" name="Batch_ID"
+                                           placeholder="Batch_ID">
+                                     <input type="text" class="form-control" id="Company_Code" name="Company_Code"
+                                           placeholder="Company_Code">
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <div class="col-sm-offset-3 col-sm-9">
+                                    <button type="submit" class="btn btn-default">Save</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
