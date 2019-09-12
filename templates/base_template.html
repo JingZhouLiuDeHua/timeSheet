@@ -107,24 +107,6 @@
             <a href="{% url 'show_time_card' %}" class="topnav">Reports</a>
             {% endblock %}
         </div>
-<<<<<<< HEAD
-
-
-
-    <div class="topbar">
-        <div class="header">TIMECARD<br>Data Entry System</div>
-        <div class="header">THE MIDDLE IMAGE</div>
-        <div class="header">
-            Welcome {% if user.is_authenticated %}, {{ user.First_name }}.{% endif %}<br>
-            <a href="">Log Out</a>
-        </div><br>
-        {% block nav %}
-        <a href="" class="topnav">Administration</a>
-        <a href="/" class="topnav">Time Card Management</a>
-        <a href="/" class="topnav">Reports</a>
-        {% endblock %}
-=======
->>>>>>> 212b43e2b40e7e9a4c7ffe54c04bd5513f6b99aa
     </div>
     <div id="sidebar"><br>
         {% block sidenav %}
