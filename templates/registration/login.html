@@ -1,4 +1,93 @@
-{% extends 'base_template.html' %}
+    <style>
+        #topbar { /* sets the top area that includes header > 3 headerblocks and topnavi > 3 topnav */
+            background-color: white;
+            width: 100%;
+            height: 160px;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+        }
+        #sidebar { /* sets the sidebar area that includes sidenav */
+            height: 100%;
+            width: 200px;
+            position: fixed;
+            top: 200px;
+            left:0;
+            background-color: #78706c;
+        }
+        .sidenav { /*the blocks for side navigation links */
+            display: block;
+            color: black;
+            padding: 10px;
+            text-align: left;
+        }
+        #heading{ /*container for the headerblocks */
+            background-color: #78706c;
+            height: 70%;
+        }
+        #startedfromthe { /* container for the topnav */
+            background-color: #78706c;
+            height: 30%
+        }
+        .headerblock {
+            display: inline-block;
+            vertical-align: top;
+            height: 100%;
+            width: 30%;
+            text-align: center;
+            color: white;
+            text-size: 1.2em;
+            font-weight: bold;
+            background-color: #78706c;
+        }
+        .topnav {
+            background-color: darkgray;
+            display: inline-block;
+            position: inline;
+            color: white;
+            font-family: 'Tahoma';
+            font-size: 1em;
+            padding: 10px;
+            font-weight: bold;
+        }
+        .sidenav:hover, .topnav:hover {
+            background-color: grey;
+            font-weight: bold;
+        }
+        .main {
+            margin-left: 250px;
+            margin-top: 150px;
+        }
+        a:link, a:active, a:visited, a:hover {
+            text-decoration:none;
+            font-family: tahoma;
+        }
+        .active {
+            background-color: white;
+            color: black;
+            font-weight: bold;
+           }
+        th {
+            font-weight: bold;
+            color: white;
+            background-color: black;
+            padding: 10px;
+        }
+        table {
+            width: 70%;
+            border: 1px solid black;
+            background-color: lightgrey;
+        }
+        td {
+            padding: 5px;
+            border: 1px solid white;
+        }
+        #linkbar{
+            width: 65%;
+            padding: 10px;
+            text-align: right;
+        }
+        </style>
 
 {% block content %}
 

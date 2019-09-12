@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c77f956-2e00-4dfa-b79b-5d0206df3913" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/base_template.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoginLogout/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/LoginLogout/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base_template.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/timeSheetManagement/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/timeSheetManagement/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/timeSheetManagement/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/timeSheetManagement/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth import authenticate, login
+from django.contrib import messages
 
 
 
@@ -13,7 +15,7 @@ def login_request(request):
             if user is not None:
                 login(request, user)
                 messages.info(request, "You are now logged in as {username}")
-                return redirect('/')
+                return render(request, 'base_template.html')
             else:
                 messages.error(request, "Invalid username or password.")
         else:
@@ -27,7 +29,7 @@ def login_request(request):
 def logout_request(request):
     logout(request)
     messages.info(request, "Logged out successfully!")
-    return redirect("main:homepage")
+    return redirect("registration/login.html")
 
 
 # Create your views here.

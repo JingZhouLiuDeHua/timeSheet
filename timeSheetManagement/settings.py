@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'AddUser',
     'AddLocation',
     'ReportTable',
+    'LoginLogout',
 ]
 
 MIDDLEWARE = [
