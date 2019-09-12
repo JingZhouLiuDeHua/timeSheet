@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c77f956-2e00-4dfa-b79b-5d0206df3913" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/add_report.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/templates/report_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReportTable/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/ReportTable/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReportTable/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ReportTable/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base_template.html" afterDir="false" />
     </list>
@@ -15,11 +13,19 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1QhjQU5QnSYNOkMWhzRLf5GvwqG" />
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
