@@ -1,5 +1,4 @@
 """timeSheetManagement URL Configuration
-
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.2/topics/http/urls/
 Examples:
@@ -16,19 +15,21 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import url
-from AddDoctor import views
-from AddLocation import views
-from AddUser import views
+from AddDoctor.views import show_doctors, add_doctor
+from AddLocation.views import add_location, showLocation
+from AddUser.views import add_user, user_list
+from ReportTable.views import showReport
 from django.views.generic.base import TemplateView
-from LoginLogout import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    #url(r'^doctor_list/', views.showthis),
-    #url(r'^add_doctor/',  views.add_doctor),
-    #url(r'^try_me/',  views.try_this),
-    #url(r'^add_user/', views.add_user),
-    #url(r'^user_list/', views.user_list),
-    path('', views.login_request, name="login"),
-    path('logout/', views.logout_request, name="logout"),
+    url(r'^doctor_list/', show_doctors, name='show_doctor_list'),
+    url(r'^add_doctor/',  add_doctor, name='add_doctor_form'),
+    url(r'^add_user/', add_user, name='add_user_form'),
+    url(r'^user_list/', user_list, name='show_user_list'),
+    url(r'^location_list/', showLocation, name='show_location_list'),
+    url(r'^add_location/', add_location, name='add_location_form'),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('timecard/', showReport, name='show_time_card'),
+    path('', TemplateView.as_view(template_name='base_template.html'), name='base'),
 ]

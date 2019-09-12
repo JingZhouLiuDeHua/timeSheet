@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>{% block name %} Base Template{% endblock %}</title> /* change title on each page */
+    <title>{% block title %} Base Template{% endblock %}</title> /* change title on each page */
     <style>
         #topbar { /* sets the top area that includes header > 3 headerblocks and topnavi > 3 topnav */
             background-color: white;
@@ -64,6 +64,7 @@
         }
         a:link, a:active, a:visited, a:hover {
             text-decoration:none;
+            font-family: tahoma;
         }
         .active {
             background-color: white;
@@ -72,12 +73,27 @@
            }
         th {
             font-weight: bold;
-            letter-spacing: 2px;
+            color: white;
+            background-color: black;
+            padding: 10px;
+        }
+        table {
+            width: 70%;
+            border: 1px solid black;
+            background-color: lightgrey;
+        }
+        td {
+            padding: 5px;
+            border: 1px solid white;
+        }
+        #linkbar{
+            width: 65%;
+            padding: 10px;
+            text-align: right;
         }
     </style>
 </head>
 <body>
-
     <div id="topbar">
         <div id="heading">
             <div class="headerblock"><br>TIMECARD <br> Data Entry System</div>
@@ -91,6 +107,7 @@
             <a href="/" class="topnav">Reports</a>
             {% endblock %}
         </div>
+<<<<<<< HEAD
 
 
 
@@ -106,6 +123,8 @@
         <a href="/" class="topnav">Time Card Management</a>
         <a href="/" class="topnav">Reports</a>
         {% endblock %}
+=======
+>>>>>>> 212b43e2b40e7e9a4c7ffe54c04bd5513f6b99aa
     </div>
     <div id="sidebar"><br>
         {% block sidenav %}
@@ -113,16 +132,14 @@
         <a href="/" class="sidenav">Master Data</a>
         <a href="/" class="sidenav">Policy Manager </a>
         {% endblock %}
-
     </div>
     <div class="main">
-        <h2> {% block title %} Page Name {% endblock %}</h2>
-
-
-            {% block content %}
-            <table>
-            </table>
-            {% endblock %}
+        <h2> {% block name %} Page Name {% endblock %}</h2>
+        <div id="linkbar"> {% block findadd %} {% endblock %}</div>
+        {% block content %}
+        <table>
+        </table>
+        {% endblock %}
 
     </div>
 </body>

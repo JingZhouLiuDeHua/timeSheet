@@ -1,96 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{% block title %} Base Template{% endblock %}</title> /* change title on each page */
     <style>
-        .topbar {
-            background-color: lightgray;
+        #topbar { /* sets the top area that includes header > 3 headerblocks and topnavi > 3 topnav */
+            background-color: white;
             width: 100%;
-            height: 150px;
+            height: 160px;
             position: fixed;
             top: 0px;
             left: 0px;
-            padding: 20px;
         }
-        .sidebar {
+        #sidebar { /* sets the sidebar area that includes sidenav */
             height: 100%;
-            width: 150px;
+            width: 200px;
             position: fixed;
             top: 200px;
             left:0;
-            padding: 20px;
-            background-color: lightblue;
+            background-color: #78706c;
         }
-
-        .topnav {
-            position: inline;
-            background-color: maroon;
-            color: white;
-            font-family: Cambria;
-            font-size: 1.2em;
-            padding: 15px;
-        }
-        .sidenav {
+        .sidenav { /*the blocks for side navigation links */
             display: block;
-            color: gray;
+            color: black;
             padding: 10px;
-            text-align: right;
+            text-align: left;
         }
-
-        .sidenav:hover {
-            background-color: black;
+        #heading{ /*container for the headerblocks */
+            background-color: #78706c;
+            height: 70%;
+        }
+        #startedfromthe { /* container for the topnav */
+            background-color: #78706c;
+            height: 30%
+        }
+        .headerblock {
+            display: inline-block;
+            vertical-align: top;
+            height: 100%;
+            width: 30%;
+            text-align: center;
+            color: white;
+            text-size: 1.2em;
+            font-weight: bold;
+            background-color: #78706c;
+        }
+        .topnav {
+            background-color: darkgray;
+            display: inline-block;
+            position: inline;
+            color: white;
+            font-family: 'Tahoma';
+            font-size: 1em;
+            padding: 10px;
+            font-weight: bold;
+        }
+        .sidenav:hover, .topnav:hover {
+            background-color: grey;
             font-weight: bold;
         }
         .main {
-            margin-left: 200px;
-            margin-top: 200px;
+            margin-left: 250px;
+            margin-top: 150px;
         }
         a:link, a:active, a:visited, a:hover {
             text-decoration:none;
+            font-family: tahoma;
         }
-        .header {
-            height: 50%;
-            width: 33%;
-            display: inline-block;
-            color: white
-            background-color: maroon;
-            text-align: center;
-        }
-        a:active {
-            color: orange;
+        .active {
+            background-color: white;
+            color: black;
+            font-weight: bold;
            }
+        th {
+            font-weight: bold;
+            color: white;
+            background-color: black;
+            padding: 10px;
+        }
+        table {
+            width: 70%;
+            border: 1px solid black;
+            background-color: lightgrey;
+        }
+        td {
+            padding: 5px;
+            border: 1px solid white;
+        }
+        #linkbar{
+            width: 65%;
+            padding: 10px;
+            text-align: right;
+        }
     </style>
 </head>
 <body>
-    <div class="topbar">
-        <div class="header">TIMECARD<br>Data Entry System</div>
-        <div class="header">THE MIDDLE IMAGE</div>
-        <div class="header">
-            Welcome {% if user.is_authenticated %}, {{ user.First_name }}.{% endif %}<br>
-            {{ current date }}<br>
-            <a href="">Log Out</a>
-        </div><br>
-        {% block topnav %}
-        <a href="" class="topnav">Administration</a>
-        <a href="/" class="topnav">Time Card Management</a>
-        <a href="/" class="topnav">Reports</a>
-        {% endblock %}
+    <div id="topbar">
+        <div id="heading">
+            <div class="headerblock"><br>TIMECARD <br> Data Entry System</div>
+            <div class="headerblock"><br>Choctaw Archiving</div>
+            <div class="headerblock"><br>Welcome user.name<br> date</div>
+        </div>
+        <div id="startedfromthe">
+            {% block topnav %}
+            <a href="{% url 'show_user_list' %}" class="topnav">Administration</a>
+            <a href="{% url 'show_time_card' %}" class="topnav">Time Card Management</a>
+            <a href="{% url 'show_time_card' %}" class="topnav">Reports</a>
+            {% endblock %}
+        </div>
     </div>
-    <div class="sidebar">
+    <div id="sidebar"><br>
         {% block sidenav %}
-        <a href="/" class="sidenav">Users</a>
-        <a href="/" class="sidenav">Master Data</a>
+        <a href="{% url 'show_user_list' %}" class="sidenav">Users</a>
+        <a href="{% url 'show_doctor_list' %}" class="sidenav">Master Data</a>
         <a href="/" class="sidenav">Policy Manager </a>
         {% endblock %}
     </div>
     <div class="main">
-        <h2> {% block title %} Page Name {% endblock %}</h2>
-
+        <h2> {% block name %} Page Name {% endblock %}</h2>
+        <div id="linkbar"> {% block findadd %} {% endblock %}</div>
+        {% block content %}
         <table>
-            {% block content %}
-            {% endblock %}
         </table>
+        {% endblock %}
+
     </div>
 </body>
 </html>
