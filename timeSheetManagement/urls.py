@@ -18,7 +18,7 @@ from django.conf.urls import url
 from AddDoctor.views import show_doctors, add_doctor
 from AddLocation.views import add_location, showLocation
 from AddUser.views import add_user, user_list
-from ReportTable.views import showReport
+from ReportTable.views import showReport, add_report
 from django.views.generic.base import TemplateView
 from LoginLogout import views
 
@@ -27,9 +27,11 @@ urlpatterns = [
     url(r'^doctor_list/', show_doctors, name='show_doctor_list'),
     url(r'^add_doctor/',  add_doctor, name='add_doctor_form'),
     url(r'^register/', add_user, name='add_user_form'),
+    url(r'^add_user/', add_user, name='add_user_form'),
     url(r'^user_list/', user_list, name='show_user_list'),
     url(r'^location_list/', showLocation, name='show_location_list'),
     url(r'^add_location/', add_location, name='add_location_form'),
     path('', views.login_request, name='login_page'),
     path('timecard/', showReport, name='show_time_card'),
+    path('add_report/', add_report, name='add_report'),
 ]

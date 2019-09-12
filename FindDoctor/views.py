@@ -6,11 +6,10 @@ from AddDoctor import models
 
 
 def searchDoctor(request):
-    template_name = 'list_doctors.html'
     query = request.GET.get('First_name', 'Last_name', 'FileNumber')
 
     if query:
         results = Doctor.objects.filter(name_icontains=query).distinct()
     else:
         results = []
-    return render(request, template_name, {'results': results})
+    return render(request, {'results': results}, template_name= 'list_doctors.html')

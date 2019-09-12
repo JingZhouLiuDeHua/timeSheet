@@ -9,7 +9,7 @@ class Report(models.Model):
     Work_Date = models.DateTimeField(auto_now_add=True)
     Time_In = models.DateTimeField(auto_now_add=True)
     Time_Out = models.DateTimeField(auto_now_add=True)
-    Hours_Worked = models.DateTimeField(auto_now_add=True)
+    Hours_Worked = models.PositiveIntegerField()
     Hours_Code = models.CharField(max_length=50)
     Report_Date = models.DateTimeField(auto_now_add=True)
     Batch_ID = models.PositiveIntegerField()
