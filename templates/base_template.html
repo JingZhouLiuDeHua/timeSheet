@@ -25,11 +25,11 @@
             padding: 10px;
             text-align: left;
         }
-        #heading{
+        #heading{ /*container for the headerblocks */
             background-color: #78706c;
             height: 70%;
         }
-        #startedfromthe {
+        #startedfromthe { /* container for the topnav */
             background-color: #78706c;
             height: 30%
         }
@@ -77,6 +77,7 @@
     </style>
 </head>
 <body>
+
     <div id="topbar">
         <div id="heading">
             <div class="headerblock"><br>TIMECARD <br> Data Entry System</div>
@@ -91,6 +92,20 @@
             {% endblock %}
         </div>
 
+
+
+    <div class="topbar">
+        <div class="header">TIMECARD<br>Data Entry System</div>
+        <div class="header">THE MIDDLE IMAGE</div>
+        <div class="header">
+            Welcome {% if user.is_authenticated %}, {{ user.First_name }}.{% endif %}<br>
+            <a href="">Log Out</a>
+        </div><br>
+        {% block topnav %}
+        <a href="" class="topnav">Administration</a>
+        <a href="/" class="topnav">Time Card Management</a>
+        <a href="/" class="topnav">Reports</a>
+        {% endblock %}
     </div>
     <div id="sidebar"><br>
         {% block sidenav %}
